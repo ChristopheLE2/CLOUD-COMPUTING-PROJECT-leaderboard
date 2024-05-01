@@ -1,0 +1,5 @@
+FROM python:3.8
+COPY requirements.txt requirements.txt 
+RUN pip install -r /scripts/requirements.txt
+EXPOSE 8000
+CMD ["python","manage.py"] #le port par défaut est le 8000 qui est celui qu'on veut

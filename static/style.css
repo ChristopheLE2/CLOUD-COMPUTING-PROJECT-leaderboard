@@ -1,0 +1,13 @@
+/* Center the login form vertically */
+.is-vcentered {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This makes the container take the full viewport height */
+}
+
+.logo {
+    width: 150px;
+    max-height: 150px!important; /* Adjust the width as needed */
+}

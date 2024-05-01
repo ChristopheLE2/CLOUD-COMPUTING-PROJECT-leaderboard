@@ -1,0 +1,68 @@
+version: '3.8'
+
+services:
+  client:
+    container_name: client
+    build:
+      context: .
+      dockerfile: init_app
+  
+  api:
+    container_name: api
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_DB_DATABASE=my_mongo
+    depends_on:
+      - selenium-chrome
+    volumes:
+      - data_from_scrap:/tmp
+
+  database1:
+    build:
+      context: .
+      dockerfile: API/dockerfile_dash_app
+    container_name: dash_app_container
+    ports:
+      - "8050:8050"
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_USERNAME: user
+      MONGO_PASSWORD: user
+      MONGO_DB_DATABASE: my_mongo
+      MONGO_PORT: 27017
+
+  database2:
+    build:
+      context: .
+      dockerfile: API/dockerfile_dash_app
+    container_name: dash_app_container
+    ports:
+      - "8050:8050"
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_USERNAME: user
+      MONGO_PASSWORD: user
+      MONGO_DB_DATABASE: my_mongo
+      MONGO_PORT: 27017
+
+  proxy:
+    build:
+      context: .
+      dockerfile: API/dockerfile_dash_app
+    container_name: dash_app_container
+    ports:
+      - "8050:8050"
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_USERNAME: user
+      MONGO_PASSWORD: user
+      MONGO_DB_DATABASE: my_mongo
+      MONGO_PORT: 27017
+      
+volumes:
+  data_from_scrap:
+
