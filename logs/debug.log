@@ -86,3 +86,7 @@ django.db.utils.OperationalError: no such table: auth_user
 2024-05-01 12:10:00,066 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
 2024-05-01 12:10:02,443 [DEBUG] asyncio: Using proactor: IocpProactor
 2024-05-01 12:10:02,537 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-01 15:31:57,734 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-01 15:32:07,794 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-01 15:32:53,234 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-01 15:33:03,290 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})

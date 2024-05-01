@@ -93,6 +93,19 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+        'PORT' : '3306'
+        
+        #"USER": "SQLuser",       #A REFLECHIR POUR SECURISER LA COMMUNICATION
+        #"PASSWORD": "SQLmdp",          #A REFLECHIR POUR SECURISER LA COMMUNICATION
+    },
+
+    'postgres' : {
+        'ENGINE' : 'django.db.backends.postgresql',
+        'NAME' : BASE_DIR / 'db.postgres',
+        'PORT': '5432'
+                
+        #"USER": "POSTGRESuser",       #A REFLECHIR POUR SECURISER LA COMMUNICATION
+        #"PASSWORD": "POSTGRESmdp",          #A REFLECHIR POUR SECURISER LA COMMUNICATION
     }
 }
 
