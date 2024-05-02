@@ -90,3 +90,31 @@ django.db.utils.OperationalError: no such table: auth_user
 2024-05-01 15:32:07,794 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
 2024-05-01 15:32:53,234 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
 2024-05-01 15:33:03,290 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:39:45,985 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-02 08:39:56,012 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:40:17,064 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:40:17,268 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:40:52,889 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:41:03,806 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-02 08:41:13,837 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:41:15,142 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:41:15,339 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:51:10,521 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-02 08:51:20,555 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:51:30,605 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:51:40,647 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:51:50,313 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:51:50,507 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:56:43,629 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-02 08:56:53,662 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:57:03,699 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:57:13,732 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:57:18,832 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:57:19,034 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:58:13,469 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:59:12,120 [INFO] django.utils.autoreload: Watching for file changes with StatReloader
+2024-05-02 08:59:22,163 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:59:31,167 [WARNING] django.request: Not Found: /favicon.ico
+2024-05-02 08:59:32,215 [DEBUG] schedule: Running job Job(interval=10, unit=seconds, do=job, args=(), kwargs={})
+2024-05-02 08:59:38,734 [DEBUG] asyncio: Using proactor: IocpProactor
+2024-05-02 08:59:38,955 [DEBUG] asyncio: Using proactor: IocpProactor
