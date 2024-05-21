@@ -90,24 +90,16 @@ WSGI_APPLICATION = 'leaderboard.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        'PORT' : '3306'
-        
-        #"USER": "SQLuser",       #A REFLECHIR POUR SECURISER LA COMMUNICATION
-        #"PASSWORD": "SQLmdp",          #A REFLECHIR POUR SECURISER LA COMMUNICATION
-    },
-
-    'postgres' : {
-        'ENGINE' : 'django.db.backends.postgresql',
-        'NAME' : BASE_DIR / 'db.postgres',
-        'PORT': '5432'
-                
-        #"USER": "POSTGRESuser",       #A REFLECHIR POUR SECURISER LA COMMUNICATION
-        #"PASSWORD": "POSTGRESmdp",          #A REFLECHIR POUR SECURISER LA COMMUNICATION
+    "default": {
+        "ENGINE": config('DATABASE_ENGINE', default='django.db.backends.postgresql'),
+        "NAME": config('DATABASE_NAME', default='postgres'),
+        "USER": config('DATABASE_USER', default='postgres'),
+        "PASSWORD": config('DATABASE_PASSWORD', default='postgres'),
+        "HOST": config('DATABASE_HOST', default='post'),
+        "PORT": config('DATABASE_PORT', default='5432'),
     }
 }
+
 
 
 # Password validation
