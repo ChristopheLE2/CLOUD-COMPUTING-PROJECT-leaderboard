@@ -1,28 +1,22 @@
+# Utiliser une image de base officielle de Python
+FROM python:3.10.1-alpine
 
-# a modifier
-
-
-FROM python:3.9
-# Définir les variables d'environnement pour l'environnement de production
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
-
-# Définir le répertoire de travail dans le conteneur
+# Définir le répertoire de travail
 WORKDIR /code
 
-# Installer les dépendances de l'application
-COPY requirements.txt /code/
-RUN pip install --no-cache-dir -r requirements.txt
+ENV PYTHONDONTWRITEBYCODE 1
+ENV PYTHONBUFFERED 1
 
-# Copier les fichiers de votre application dans le conteneur
+RUN apk update && apk add postgresql-dev gcc python3-dev musl-dev
+RUN pip install --upgrade pip
+
+# Copier les fichiers requirements.txt et installer les dépendances
+COPY requirements.txt /code/
+RUN pip install -r requirements.txt
+
+# Copier le reste du code de l'application
 COPY . /code/
 
-# Exécuter les migrations et collecter les fichiers statiques
-RUN python manage.py migrate
-RUN python manage.py collectstatic --noinput
-
-# Exposer le port sur lequel Django fonctionnera
 EXPOSE 8000
 
-# Commande pour démarrer le serveur Django
-CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+CMD ["gunicorn","--bind","0.0.0.0:8000","--workers","3","leaderboard.wsgi:application"]
