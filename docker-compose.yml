@@ -1,0 +1,58 @@
+version: '3'
+
+networks:
+  monreseau:
+    external: false
+
+services:
+  web:
+    build: .
+    container_name: contweb
+    volumes:
+      - monsitestatics:/code/static/
+      - monsitemedias:/code/medias/
+    ports:
+      - '8000:8000'
+    depends_on:
+      - db
+    networks:
+      - monreseau
+
+  db:
+    image: postgres:13-alpine
+    container_name: post
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    networks:
+      - monreseau
+
+  db_mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_DATABASE: mysql
+      MYSQL_USER: mysql
+      MYSQL_PASSWORD: mysql
+      MYSQL_ROOT_PASSWORD: mysql
+    networks:
+      - monreseau
+
+  nginx:
+    image: 'nginx:1.19-alpine'
+    container_name: contnginx
+    volumes:
+      - monsitestatics:/home/app/web/static_assets
+      - monsitemedias:/home/app/web/medias
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - web
+    networks:
+      - monreseau
+    ports:
+      - '80:80'
+
+volumes:
+  monsitestatics:
+  monsitemedias:
