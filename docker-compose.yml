@@ -62,6 +62,7 @@ services:
     volumes:
       - ./static:/home/app/web/static_assets
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - media:/var/www/html/media
     depends_on:
       - web
     networks:
@@ -70,6 +71,6 @@ services:
       - '80:80'
 
 volumes:
-  monsitestatics:
+  media:
   postgres_data:
   mysql_data:
