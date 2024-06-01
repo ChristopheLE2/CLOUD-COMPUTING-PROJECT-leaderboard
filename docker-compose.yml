@@ -8,8 +8,8 @@ services:
   web:
     build: .
     container_name: contweb
-    volumes:
-      - monsitestatics:/code/static/
+    #volumes:
+    #  - monsitestatics:/code/static/
     ports:
       - '8000:8000'
     depends_on:
