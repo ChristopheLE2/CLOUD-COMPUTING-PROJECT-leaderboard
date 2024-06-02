@@ -62,13 +62,13 @@ services:
     volumes:
       - monsitestatics:/home/app/web/static_assets
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
-      - media:/var/www/html/media
+      - media:/home/app/web/medias 
     depends_on:
       - web
     networks:
       - monreseau
     ports:
-      - '8080:80'
+      - '80:80'
 
 volumes:
   media:
